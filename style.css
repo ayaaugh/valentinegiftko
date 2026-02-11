@@ -1,4 +1,4 @@
-/* === GLOBAL === *//* === GLOBAL === */
+/* === GLOBAL === */
 * {
   margin: 0;
   padding: 0;
@@ -9,12 +9,16 @@ body {
   font-family: "Georgia", serif;
   background: #1e1e2f;
   color: #fff;
+
   display: flex;
   justify-content: center;
   align-items: center;
-  min-height: 100vh;   /* changed from height */
   flex-direction: column;
-  padding: 20px;       /* added so it doesn’t touch screen edges */
+
+  min-height: 100vh;
+  padding: 20px;
+
+  overflow-x: hidden; /* prevent side scroll */
 }
 
 /* === INTRO === */
@@ -43,21 +47,24 @@ body {
 /* === LETTER BOX === */
 .letter {
   display: none;
+
   background: repeating-linear-gradient(
     to bottom,
     #fdf6e3 0px,
     #fdf6e3 27px,
     #d2d2d2 28px
   );
+
   color: #333;
   padding: 20px 20px 20px 40px;
   border-radius: 12px;
 
   width: 100%;
-  max-width: 420px;        /* slightly bigger but still safe */
+  max-width: 420px;
   max-height: 85vh;
 
-  overflow-y: auto;
+  overflow-y: auto; /* enables scrolling */
+
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
 
   font-size: 0.85rem;
@@ -71,12 +78,12 @@ body {
   font-family: "Courier New", monospace;
 }
 
-/* REMOVE the negative margin */
+/* remove weird spacing */
 .letter p {
   margin-top: 0;
 }
 
-/* Notebook holes */
+/* Notebook holes effect */
 .letter::before {
   content: "";
   position: absolute;
@@ -129,5 +136,3 @@ body {
     width: 80px;
   }
 }
-
-

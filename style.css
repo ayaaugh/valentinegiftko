@@ -1,4 +1,4 @@
-/* === GLOBAL === */
+/* === GLOBAL === *//* === GLOBAL === */
 * {
   margin: 0;
   padding: 0;
@@ -12,16 +12,16 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh;
+  min-height: 100vh;   /* changed from height */
   flex-direction: column;
-  overflow: hidden;
+  padding: 20px;       /* added so it doesn’t touch screen edges */
 }
 
+/* === INTRO === */
 .intro {
   text-align: center;
   font-size: 1.4rem;
   margin-bottom: 30px;
-  opacity: 1;
   transition: opacity 1s ease;
 }
 
@@ -50,26 +50,33 @@ body {
     #d2d2d2 28px
   );
   color: #333;
-  padding: 15px 15px 15px 40px;
-  border-radius: 10px;
-  width: 90%;
-  max-width: 350px;
-  max-height: 80vh; /* make it fit in viewport */
-  overflow-y: auto; /* scroll if content is too tall */
-  box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
-  font-size: 0.75rem;
-  line-height: 1.3;
+  padding: 20px 20px 20px 40px;
+  border-radius: 12px;
+
+  width: 100%;
+  max-width: 420px;        /* slightly bigger but still safe */
+  max-height: 85vh;
+
+  overflow-y: auto;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+
+  font-size: 0.85rem;
+  line-height: 1.6;
   text-align: left;
+
   position: relative;
   white-space: pre-wrap;
-  overflow-wrap: break-word;
+  word-wrap: break-word;
+
   font-family: "Courier New", monospace;
 }
 
+/* REMOVE the negative margin */
 .letter p {
-  margin-top: -55px;
+  margin-top: 0;
 }
 
+/* Notebook holes */
 .letter::before {
   content: "";
   position: absolute;
@@ -84,12 +91,13 @@ body {
   pointer-events: none;
 }
 
+/* Signature image */
 .signature {
   position: absolute;
-  bottom: -10px;
-  right: 2px;
-  width: 120px;
-  opacity: 0.9;
+  bottom: 10px;
+  right: 10px;
+  width: 100px;
+  opacity: 0.85;
   pointer-events: none;
   transform: rotate(-2deg);
 }
@@ -107,20 +115,19 @@ body {
   }
 
   .letter {
-    padding: 10px 10px 10px 30px;
-    max-width: 95%;
-    font-size: 0.7rem;
-    line-height: 1.2;
+    padding: 15px 15px 15px 35px;
+    font-size: 0.75rem;
+    line-height: 1.5;
   }
 
   .letter::before {
     width: 12px;
-    background-size: 12px 20px;
+    background-size: 12px 22px;
   }
 
   .signature {
-    width: 100px;
-    bottom: -8px;
-    right: 2px;
+    width: 80px;
   }
 }
+
+
